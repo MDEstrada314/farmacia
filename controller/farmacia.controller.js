@@ -59,12 +59,97 @@ const ejercio3 = async (req,res)=>{
 
 const ejercio4 = async (req,res)=>{
     const colecion =  await getCollection('Ventas')
-    const result = await colecion.find({
-        fecha: {
-            $gte: new Date("2023-01-15T00:00:00.000+00:00")
-          }
-      }).toArray()
-    res.json(result)
+    const fecha_busqueda = new Date('2023-01-10');
+    colecion.find({"fechaVenta": {"$gte": fecha_busqueda}}).toArray()
+
+        .then(resultados => {
+            const fechaFinal = []
+            const fechas = resultados.map(documento => documento.fechaVenta);
+            for (let index = 0; index < fechas.length; index++) {
+                const element = `fecha ${index} ---> ${fechas[index]}`;
+                fechaFinal.push(element)
+
+                
+            }
+        res.json(fechaFinal);
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).json({ error: 'Error en la consulta' });
+        });
+
+}
+
+
+/* const ejercio5 = async (req,res)=>{
+    const colecion =  await getCollection('Ventas')
+    colecion.find({'medicamentosVendidos.nombreMedicamento':'Paracetamol'}).toArray()
+    .then(resultado => {
+        res.json(resultado); // Responder con los resultados
+    })
+    .catch(error => {
+        console.log(error);
+        res.status(500).json({error: "Error de consulta"});
+    });
+    
+}    */
+
+
+const ejercio5 = async (req,res)=>{
+    try {
+        const colecion =  await getCollection('Ventas')
+        const ventas = await colecion.find({'medicamentosVendidos.nombreMedicamento': 'Paracetamol'}).toArray();
+    const totalVentas = ventas.reduce((total, venta) => {
+        const medicamento = venta.medicamentosVendidos.find((m) => m.nombreMedicamento === 'Paracetamol');
+        if (medicamento) {
+            total.precio += medicamento.precio;
+            total.cantidadVendida += medicamento.cantidadVendida;
+        }
+        return total;
+    }, { precio : 0, cantidadVendida: 0 });
+
+    res.json(totalVentas);
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error en la consulta" });
+}
+    
+}   
+
+
+
+const ejercio6 = async (req,res)=>{
+    const colección = await getCollection('Medicamentos')
+    const fecha_busqueda = new Date ('2024-01-02')
+    colección.find({"fechaExpiracion": {"$lt": fecha_busqueda}})
+    .project({ "_id": 0, "nombre": 1, "fechaExpiracion": 1 }) // Incluye solo los campos "nombre" y "fechaExpiracion"
+    .toArray()
+    .then(result => {
+        res.json(result);
+    })
+    .catch(error => {
+        console.error(error);
+        res.status(500).json({ error: 'Error en la consulta' });
+    });
+}
+
+const ejercio7 = async(req,res)=>{
+    try {
+        const colección = await getCollection('Medicamentos')
+        const nombres = await colección.aggregate([
+            {
+                $group: {
+                    _id: "$proveedor.nombre",
+                    total: { $sum: 1 }
+                }
+            }
+        ]).toArray();
+        res.json(nombres);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error en la consulta' });
+    }
+
 
 }
 
@@ -72,12 +157,6 @@ const ejercio4 = async (req,res)=>{
 
 
 
-
-
-
-
-
-
 module.exports = {
-    ejercio1,ejercio2,ejercio3,ejercio4
+    ejercio1,ejercio2,ejercio3,ejercio4,ejercio5,ejercio6,ejercio7
 }

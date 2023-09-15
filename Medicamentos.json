@@ -1,0 +1,141 @@
+[{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbacc"
+  },
+  "nombre": "Paracetamol",
+  "precio": 20,
+  "stock": 150,
+  "fechaExpiracion": {
+    "$date": "2023-06-15T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorA",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbacd"
+  },
+  "nombre": "Ibuprofeno",
+  "precio": 25,
+  "stock": 50,
+  "fechaExpiracion": {
+    "$date": "2024-12-01T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorB",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbace"
+  },
+  "nombre": "Aspirina",
+  "precio": 15,
+  "stock": 30,
+  "fechaExpiracion": {
+    "$date": "2024-05-20T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorC",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbacf"
+  },
+  "nombre": "Amoxicilina",
+  "precio": 40,
+  "stock": 75,
+  "fechaExpiracion": {
+    "$date": "2025-08-11T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorA",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad0"
+  },
+  "nombre": "Cetirizina",
+  "precio": 10,
+  "stock": 110,
+  "fechaExpiracion": {
+    "$date": "2024-01-23T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorB",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad1"
+  },
+  "nombre": "Losartan",
+  "precio": 55,
+  "stock": 95,
+  "fechaExpiracion": {
+    "$date": "2024-07-30T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorC",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad2"
+  },
+  "nombre": "Metformina",
+  "precio": 60,
+  "stock": 180,
+  "fechaExpiracion": {
+    "$date": "2024-09-29T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorA",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad3"
+  },
+  "nombre": "Atorvastatina",
+  "precio": 45,
+  "stock": 200,
+  "fechaExpiracion": {
+    "$date": "2024-10-05T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorB",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad4"
+  },
+  "nombre": "Clonazepam",
+  "precio": 35,
+  "stock": 25,
+  "fechaExpiracion": {
+    "$date": "2024-04-21T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorC",
+    "contacto": "contacto@proveedora.com"
+  }
+},{
+  "_id": {
+    "$oid": "6501f37c2d8b988e955dbad5"
+  },
+  "nombre": "Loratadina",
+  "precio": 22,
+  "stock": 120,
+  "fechaExpiracion": {
+    "$date": "2025-02-19T00:00:00.000Z"
+  },
+  "proveedor": {
+    "nombre": "ProveedorA",
+    "contacto": "contacto@proveedora.com"
+  }
+}]
