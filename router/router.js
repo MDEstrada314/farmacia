@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { ejercio1,ejercio2,ejercio3 } = require('../controller/farmacia.controller')
+const { ejercio1,ejercio2,ejercio3, ejercio4 } = require('../controller/farmacia.controller')
 
 
 
@@ -16,6 +16,7 @@ router.get('/hola', async(req,res)=>{
 router.get('/ejercio1', ejercio1)
 router.get('/ejercio2', ejercio2)
 router.get('/ejercio3', ejercio3)
+router.get('/ejercio4', ejercio4)
 
 
 module.exports= router
