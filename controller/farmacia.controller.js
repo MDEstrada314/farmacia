@@ -33,7 +33,7 @@ const ejercio1 = async (req,res)=>{
 const ejercio2 = async (req,res)=>{
     try {
         const colecion =  await getCollection('Medicamentos')
-        const result = await colecion.distinct('proveedor')
+        const result = await colecion.distinct('proveedor') 
         res.json(result)
         cliente.close()
 
