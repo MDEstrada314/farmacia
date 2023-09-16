@@ -35,6 +35,7 @@ const ejercio2 = async (req,res)=>{
         const colecion =  await getCollection('Medicamentos')
         const result = await colecion.distinct('proveedor') 
         res.json(result)
+        
         cliente.close()
 
     } catch (error) {
